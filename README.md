@@ -337,11 +337,11 @@ SUBMISSION:
 
 | Field | Details |
 | ----- | ------- |
-| **Full Name** | [Your Full Name] |
-| **GitHub Username** | [@your-username](https://github.com/your-username) |
+| **Full Name** | ABOI SAMSON ABOI|
+| **GitHub Username** | [@aboisam](https://github.com/aboisam) |
 | **Cohort / Group** | [e.g., "3LOGY Bootcamp — Cohort 2026 Q1"] |
 | **Assessment** | Quarter Assessment — HTML, CSS & JavaScript |
-| **Submission Date** | [DD/MM/YYYY] |
+| **Submission Date** | [16/May/2026] |
 | **Live URL** | [GitHub Pages / Netlify link, or "N/A"] |
 
 ---
