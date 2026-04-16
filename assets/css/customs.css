@@ -15,6 +15,53 @@
   box-shadow: var(--shadow-md);
 }
 
+/* navbar shadow on scroll */
+#main-header.scrolled {
+  box-shadow: var(--shadow-lg);
+  transition: var(--transition-normal);
+}
+
+/* ── BACK TO TOP BUTTON ── */
+#back-to-top {
+  position: fixed;
+  bottom: var(--space-xl);
+  right: var(--space-xl);
+  width: 44px;
+  height: 44px;
+  background-color: var(--color-accent);
+  color: var(--color-white);
+  border: none;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: var(--shadow-accent);
+  opacity: 0; /* hidden by default */
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: var(--transition-normal);
+  z-index: 999;
+}
+
+#back-to-top svg {
+  width: 18px;
+  height: 18px;
+  stroke: var(--color-white);
+}
+
+#back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+#back-to-top:hover {
+  background-color: var(--color-accent-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(45, 127, 249, 0.45);
+}
+
 .logo-text {
   font-family: var(--font-heading);
   font-size: var(--fs-h3);

@@ -1,85 +1,87 @@
-/* ==========================================================
-   NOVATECH SOLUTIONS — DESIGN SYSTEM TOKENS
-   Company Website Assessment | 3LOGY Bootcamp 2026
-   ========================================================== */
+/**
+ * ==========================================================
+ *    NOVATECH SOLUTIONS — DESIGN SYSTEM TOKENS
+ *    Company Website Assessment | 3LOGY Bootcamp 2026
+ *    ==========================================================
+ *
+ * @format
+ */
 
 /* ── Google Fonts ───────────────────────────────────────── */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap");
 
 /* ── Design Tokens (CSS Custom Properties) ──────────────── */
 :root {
-
   /* ─── Color Palette ─────────────────────────────────── */
-  --color-primary:        #0A1F3F;
-  --color-primary-hover:  #0D2A52;
-  --color-secondary:      #132E5B;
-  --color-accent:         #2D7FF9;
-  --color-accent-hover:   #1B6AE0;
-  --color-accent-light:   #E8F1FE;
-  --color-background:     #F4F6F9;
-  --color-white:          #FFFFFF;
-  --color-text:           #1A1A2E;
-  --color-text-light:     #6B7280;
-  --color-error:          #E53935;
-  --color-success:        #00C853;
-  --color-warning:        #FFB300;
+  --color-primary: #0a1f3f;
+  --color-primary-hover: #0d2a52;
+  --color-secondary: #132e5b;
+  --color-accent: #2d7ff9;
+  --color-accent-hover: #1b6ae0;
+  --color-accent-light: #e8f1fe;
+  --color-background: #f4f6f9;
+  --color-white: #ffffff;
+  --color-text: #1a1a2e;
+  --color-text-light: #6b7280;
+  --color-error: #e53935;
+  --color-success: #00c853;
+  --color-warning: #ffb300;
 
   /* ─── Typography ────────────────────────────────────── */
-  --font-heading:  'Space Grotesk', sans-serif;
-  --font-body:     'Inter', sans-serif;
+  --font-heading: "Space Grotesk", sans-serif;
+  --font-body: "Inter", sans-serif;
 
   /* ─── Font Sizes ────────────────────────────────────── */
-  --fs-h1:       3rem;        /* 48px */
-  --fs-h2:       2.25rem;     /* 36px */
-  --fs-h3:       1.75rem;     /* 28px */
-  --fs-h4:       1.375rem;    /* 22px */
-  --fs-body:     1rem;        /* 16px */
-  --fs-small:    0.875rem;    /* 14px */
-  --fs-caption:  0.75rem;     /* 12px */
+  --fs-h1: 3rem; /* 48px */
+  --fs-h2: 2.25rem; /* 36px */
+  --fs-h3: 1.75rem; /* 28px */
+  --fs-h4: 1.375rem; /* 22px */
+  --fs-body: 1rem; /* 16px */
+  --fs-small: 0.875rem; /* 14px */
+  --fs-caption: 0.75rem; /* 12px */
 
   /* ─── Font Weights ──────────────────────────────────── */
-  --fw-regular:   400;
-  --fw-medium:    500;
-  --fw-semibold:  600;
-  --fw-bold:      700;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
 
   /* ─── Line Heights ──────────────────────────────────── */
-  --lh-heading:  1.2;
-  --lh-body:     1.6;
-  --lh-small:    1.5;
+  --lh-heading: 1.2;
+  --lh-body: 1.6;
+  --lh-small: 1.5;
 
   /* ─── Spacing ───────────────────────────────────────── */
-  --space-xs:   0.25rem;    /*  4px */
-  --space-sm:   0.5rem;     /*  8px */
-  --space-md:   1rem;       /* 16px */
-  --space-lg:   1.5rem;     /* 24px */
-  --space-xl:   2rem;       /* 32px */
-  --space-2xl:  3rem;       /* 48px */
-  --space-3xl:  4rem;       /* 64px */
-  --space-4xl:  6rem;       /* 96px */
+  --space-xs: 0.25rem; /*  4px */
+  --space-sm: 0.5rem; /*  8px */
+  --space-md: 1rem; /* 16px */
+  --space-lg: 1.5rem; /* 24px */
+  --space-xl: 2rem; /* 32px */
+  --space-2xl: 3rem; /* 48px */
+  --space-3xl: 4rem; /* 64px */
+  --space-4xl: 6rem; /* 96px */
 
   /* ─── Border Radius ─────────────────────────────────── */
-  --radius-sm:    4px;
-  --radius-md:    8px;
-  --radius-lg:    16px;
-  --radius-full:  9999px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
 
   /* ─── Shadows ───────────────────────────────────────── */
-  --shadow-sm:     0 1px 3px rgba(0, 0, 0, 0.08);
-  --shadow-md:     0 4px 12px rgba(0, 0, 0, 0.1);
-  --shadow-lg:     0 8px 30px rgba(0, 0, 0, 0.12);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.12);
   --shadow-accent: 0 4px 14px rgba(45, 127, 249, 0.35);
 
   /* ─── Transitions ───────────────────────────────────── */
-  --transition-fast:    all 0.15s ease;
-  --transition-normal:  all 0.3s ease;
-  --transition-slow:    all 0.5s ease;
+  --transition-fast: all 0.15s ease;
+  --transition-normal: all 0.3s ease;
+  --transition-slow: all 0.5s ease;
 
   /* ─── Layout ────────────────────────────────────────── */
-  --max-width:   1200px;
-  --nav-height:  72px;
+  --max-width: 1200px;
+  --nav-height: 72px;
 }
-
 
 /* ==========================================================
    BASE RESET & GLOBAL STYLES
@@ -94,7 +96,7 @@
 }
 
 html {
-  font-size: 16px;              /* 1rem = 16px */
+  font-size: 16px; /* 1rem = 16px */
   scroll-behavior: smooth;
 }
 
@@ -115,25 +117,40 @@ img {
   display: block;
 }
 
-ul, ol {
+ul,
+ol {
   list-style: none;
 }
-
 
 /* ==========================================================
    TYPOGRAPHY
    ========================================================== */
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-family: var(--font-heading);
   line-height: var(--lh-heading);
   color: var(--color-primary);
 }
 
-h1 { font-size: var(--fs-h1); font-weight: var(--fw-bold);   }
-h2 { font-size: var(--fs-h2); font-weight: var(--fw-bold);   }
-h3 { font-size: var(--fs-h3); font-weight: var(--fw-bold);   }
-h4 { font-size: var(--fs-h4); font-weight: var(--fw-medium); }
+h1 {
+  font-size: var(--fs-h1);
+  font-weight: var(--fw-bold);
+}
+h2 {
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-bold);
+}
+h3 {
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-bold);
+}
+h4 {
+  font-size: var(--fs-h4);
+  font-weight: var(--fw-medium);
+}
 
 p {
   margin-bottom: var(--space-md);
@@ -163,7 +180,6 @@ a {
 a:hover {
   color: var(--color-accent-hover);
 }
-
 
 /* ==========================================================
    BUTTON STYLES
@@ -234,7 +250,6 @@ a:hover {
   transform: translateY(-2px);
 }
 
-
 /* ==========================================================
    LAYOUT UTILITIES
    ========================================================== */
@@ -257,14 +272,15 @@ a:hover {
 
 .section-header h2 {
   margin-bottom: var(--space-md);
+  text-align: center;
 }
 
 .section-header p {
   max-width: 600px;
   margin: 0 auto;
   color: var(--color-text-light);
+  text-align: center;
 }
-
 
 /* ==========================================================
    CARD COMPONENT
@@ -282,7 +298,6 @@ a:hover {
   box-shadow: var(--shadow-lg);
   transform: translateY(-4px);
 }
-
 
 /* ==========================================================
    FORM ELEMENTS
@@ -309,7 +324,7 @@ a:hover {
   font-size: var(--fs-body);
   color: var(--color-text);
   background-color: var(--color-white);
-  border: 1.5px solid #D1D5DB;
+  border: 1.5px solid #d1d5db;
   border-radius: var(--radius-md);
   transition: var(--transition-fast);
   outline: none;
@@ -338,32 +353,72 @@ a:hover {
   margin-top: var(--space-xs);
 }
 
-
 /* ==========================================================
    HELPER / UTILITY CLASSES
    ========================================================== */
 
-.text-center  { text-align: center; }
-.text-left    { text-align: left; }
-.text-right   { text-align: right; }
-.text-accent  { color: var(--color-accent); }
-.text-muted   { color: var(--color-text-light); }
-.text-white   { color: var(--color-white); }
-.bg-primary   { background-color: var(--color-primary); }
-.bg-secondary { background-color: var(--color-secondary); }
-.bg-white     { background-color: var(--color-white); }
-.bg-light     { background-color: var(--color-background); }
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+.text-accent {
+  color: var(--color-accent);
+}
+.text-muted {
+  color: var(--color-text-light);
+}
+.text-white {
+  color: var(--color-white);
+}
+.bg-primary {
+  background-color: var(--color-primary);
+}
+.bg-secondary {
+  background-color: var(--color-secondary);
+}
+.bg-white {
+  background-color: var(--color-white);
+}
+.bg-light {
+  background-color: var(--color-background);
+}
 
-.flex         { display: flex; }
-.flex-center  { display: flex; align-items: center; justify-content: center; }
-.flex-between { display: flex; align-items: center; justify-content: space-between; }
-.flex-column  { flex-direction: column; }
-.flex-wrap    { flex-wrap: wrap; }
-.gap-sm       { gap: var(--space-sm); }
-.gap-md       { gap: var(--space-md); }
-.gap-lg       { gap: var(--space-lg); }
-.gap-xl       { gap: var(--space-xl); }
-
+.flex {
+  display: flex;
+}
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.flex-column {
+  flex-direction: column;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.gap-sm {
+  gap: var(--space-sm);
+}
+.gap-md {
+  gap: var(--space-md);
+}
+.gap-lg {
+  gap: var(--space-lg);
+}
+.gap-xl {
+  gap: var(--space-xl);
+}
 
 /* ==========================================================
    RESPONSIVE GRID (Simple 12-column helper)
@@ -374,20 +429,30 @@ a:hover {
   gap: var(--space-xl);
 }
 
-.grid-2 { grid-template-columns: repeat(2, 1fr); }
-.grid-3 { grid-template-columns: repeat(3, 1fr); }
-.grid-4 { grid-template-columns: repeat(4, 1fr); }
+.grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+.grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
 
 @media (max-width: 992px) {
-  .grid-4 { grid-template-columns: repeat(2, 1fr); }
-  .grid-3 { grid-template-columns: repeat(2, 1fr); }
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 768px) {
   :root {
-    --fs-h1:   2.25rem;   /* 36px on mobile */
-    --fs-h2:   1.75rem;   /* 28px on mobile */
-    --fs-h3:   1.5rem;    /* 24px on mobile */
+    --fs-h1: 2.25rem; /* 36px on mobile */
+    --fs-h2: 1.75rem; /* 28px on mobile */
+    --fs-h3: 1.5rem; /* 24px on mobile */
   }
 
   .grid-2,
@@ -403,14 +468,13 @@ a:hover {
 
 @media (max-width: 480px) {
   :root {
-    --fs-h1:   2rem;      /* 32px on small mobile */
+    --fs-h1: 2rem; /* 32px on small mobile */
   }
 
   .container {
     padding: 0 var(--space-md);
   }
 }
-
 
 /* ==========================================================
    STUDENTS: ADD YOUR CUSTOM STYLES BELOW THIS LINE

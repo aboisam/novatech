@@ -86,26 +86,137 @@ navLinks.forEach((link) => {
 // 4. SCROLL EFFECTS
 // ==========================================================
 
-// TODO (OPTIONAL): Add scroll event listener for:
-// - Adding a shadow to the navbar when user scrolls down
-// - Showing a "Back to Top" button after scrolling 300px
+// ── NAVBAR SCROLL SHADOW ──
+const header = document.getElementById("main-header");
 
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 50) {
+    header.classList.add("scrolled");
+  } else {
+    header.classList.remove("scrolled");
+  }
+});
+
+// ── BACK TO TOP BUTTON ──
+const backToTop = document.getElementById("back-to-top");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 300) {
+    backToTop.classList.add("visible");
+  } else {
+    backToTop.classList.remove("visible");
+  }
+});
+
+backToTop.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+window.addEventListener("scroll", () => {
+  // navbar shadow
+  if (window.scrollY > 50) {
+    header.classList.add("scrolled");
+  } else {
+    header.classList.remove("scrolled");
+  }
+
+  // back to top
+  if (window.scrollY > 300) {
+    backToTop.classList.add("visible");
+  } else {
+    backToTop.classList.remove("visible");
+  }
+});
 // ==========================================================
 // 5. CONTACT FORM VALIDATION
 // ==========================================================
 
-// TODO: Add submit event listener to the contact form
-// Validate:
-// - Full Name: must not be empty
-// - Email: must not be empty + must match a basic email pattern
-// - Subject: must not be empty
-// - Message: must not be empty
-//
-// Display errors using the .form-error spans below each input.
-// Prevent form submission if validation fails.
-//
-// Basic email regex pattern:
-// const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+// ── CONTACT FORM VALIDATION ──
+const contactForm = document.getElementById("contact-form");
+
+if (contactForm) {
+  contactForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    // ── grab all fields ──
+    const firstName = document.getElementById("first-name");
+    const lastName = document.getElementById("last-name");
+    const email = document.getElementById("email");
+    const subject = document.getElementById("subject");
+    const message = document.getElementById("message");
+
+    // ── grab all error spans ──
+    const firstNameError = document.getElementById("first-name-error");
+    const lastNameError = document.getElementById("last-name-error");
+    const emailError = document.getElementById("email-error");
+    const subjectError = document.getElementById("subject-error");
+    const messageError = document.getElementById("message-error");
+
+    let isValid = true;
+
+    // ── helper: show error ──
+    function showError(input, errorEl, message) {
+      input.classList.add("error");
+      errorEl.textContent = message;
+      isValid = false;
+    }
+
+    // ── helper: clear error ──
+    function clearError(input, errorEl) {
+      input.classList.remove("error");
+      errorEl.textContent = "";
+    }
+
+    // ── reset all errors first ──
+    [
+      [firstName, firstNameError],
+      [lastName, lastNameError],
+      [email, emailError],
+      [subject, subjectError],
+      [message, messageError],
+    ].forEach(([input, error]) => clearError(input, error));
+
+    // ── validate each field ──
+    if (!firstName.value.trim()) {
+      showError(firstName, firstNameError, "First name is required.");
+    }
+
+    if (!lastName.value.trim()) {
+      showError(lastName, lastNameError, "Last name is required.");
+    }
+
+    if (!email.value.trim()) {
+      showError(email, emailError, "Email address is required.");
+    } else if (!emailPattern.test(email.value.trim())) {
+      showError(email, emailError, "Please enter a valid email address.");
+    }
+
+    if (!subject.value.trim()) {
+      showError(subject, subjectError, "Subject is required.");
+    }
+
+    if (!message.value.trim()) {
+      showError(message, messageError, "Message is required.");
+    }
+
+    // ── only submit if everything passed ──
+    if (isValid) {
+      alert("Message sent! We will get back to you shortly.");
+      contactForm.reset();
+    }
+  });
+
+  // ── clear error as user types (better UX) ──
+  contactForm.querySelectorAll("input, textarea").forEach((input) => {
+    input.addEventListener("input", () => {
+      input.classList.remove("error");
+      const errorEl = document.getElementById(input.id + "-error");
+      if (errorEl) errorEl.textContent = "";
+    });
+  });
+}
 
 // ==========================================================
 // 6. SERVICE ACCORDION / TABS (Services page only)
@@ -162,3 +273,48 @@ document.addEventListener("DOMContentLoaded", function () {
 
   console.log("NovaTech Solutions — Website Loaded ✅");
 });
+
+//STATS COUNT-UP ANIMATION
+const statNumbers = document.querySelectorAll(".stat-number");
+function getNumber(str) {
+  return parseInt(str.replace(/\D/g, ""));
+}
+
+function getSuffix(str) {
+  return str.replace(/[0-9]/g, "").trim();
+}
+
+function animateCount(el) {
+  const target = getNumber(el.textContent);
+  const suffix = getSuffix(el.textContent);
+  const duration = 1500;
+  const stepTime = 20;
+  const steps = duration / stepTime;
+  const increment = target / steps;
+  let current = 0;
+
+  const timer = setInterval(() => {
+    current += increment;
+    if (current >= target) {
+      el.textContent = target + suffix;
+      clearInterval(timer);
+    } else {
+      el.textContent = Math.floor(current) + suffix;
+    }
+  }, stepTime);
+}
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        statNumbers.forEach((el) => animateCount(el));
+        observer.disconnect();
+      }
+    });
+  },
+  { threshold: 0.3 },
+);
+
+const statsSection = document.querySelector("#why-choose-us");
+if (statsSection) observer.observe(statsSection);
