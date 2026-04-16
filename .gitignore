@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+
+# Instructor-only files (DO NOT push to student repo)
+docs/instructor/
+docs/design/AI-IMAGE-PROMPTS.md
