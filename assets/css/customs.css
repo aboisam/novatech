@@ -21,6 +21,44 @@
   transition: var(--transition-normal);
 }
 
+@keyframes gradientShift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+h1 {
+  background: linear-gradient(270deg, #7f77dd, #ffffff, #d85a30);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 4s ease infinite;
+}
+@keyframes letterPop {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+.hero-label {
+  display: inline-block;
+  animation: letterPop 1s ease infinite;
+}
+.hero-label span:nth-child(1) {
+  animation-delay: 0s;
+}
+.hero-label span:nth-child(2) {
+  animation-delay: 0.1s;
+}
+/* ...repeat for each letter */
+
 /* ── BACK TO TOP BUTTON ── */
 #back-to-top {
   position: fixed;
@@ -200,7 +238,6 @@
 
 .page-hero {
   min-height: auto;
-  background-image: none;
 }
 .page-hero::before {
   background: linear-gradient(
