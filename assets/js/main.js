@@ -130,24 +130,23 @@ window.addEventListener("scroll", () => {
 // ==========================================================
 // 5. CONTACT FORM VALIDATION
 // ==========================================================
-
-// ── CONTACT FORM VALIDATION ──
 const contactForm = document.getElementById("contact-form");
 
 if (contactForm) {
+  // ── SUBMIT: validate all fields ──
   contactForm.addEventListener("submit", (e) => {
     e.preventDefault();
 
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    // ── grab all fields ──
+    // grab inputs
     const firstName = document.getElementById("first-name");
     const lastName = document.getElementById("last-name");
     const email = document.getElementById("email");
     const subject = document.getElementById("subject");
     const message = document.getElementById("message");
 
-    // ── grab all error spans ──
+    // grab error spans
     const firstNameError = document.getElementById("first-name-error");
     const lastNameError = document.getElementById("last-name-error");
     const emailError = document.getElementById("email-error");
@@ -156,29 +155,26 @@ if (contactForm) {
 
     let isValid = true;
 
-    // ── helper: show error ──
-    function showError(input, errorEl, message) {
+    // ── helpers ──
+    function showError(input, errorEl, msg) {
       input.classList.add("error");
-      errorEl.textContent = message;
+      errorEl.textContent = msg;
       isValid = false;
     }
 
-    // ── helper: clear error ──
     function clearError(input, errorEl) {
       input.classList.remove("error");
       errorEl.textContent = "";
     }
 
     // ── reset all errors first ──
-    [
-      [firstName, firstNameError],
-      [lastName, lastNameError],
-      [email, emailError],
-      [subject, subjectError],
-      [message, messageError],
-    ].forEach(([input, error]) => clearError(input, error));
+    clearError(firstName, firstNameError);
+    clearError(lastName, lastNameError);
+    clearError(email, emailError);
+    clearError(subject, subjectError);
+    clearError(message, messageError);
 
-    // ── validate each field ──
+    // ── run each check ──
     if (!firstName.value.trim()) {
       showError(firstName, firstNameError, "First name is required.");
     }
@@ -201,14 +197,14 @@ if (contactForm) {
       showError(message, messageError, "Message is required.");
     }
 
-    // ── only submit if everything passed ──
+    // ── all good? submit ──
     if (isValid) {
       alert("Message sent! We will get back to you shortly.");
       contactForm.reset();
     }
   });
 
-  // ── clear error as user types (better UX) ──
+  // ── LIVE: clear error as user types ──
   contactForm.querySelectorAll("input, textarea").forEach((input) => {
     input.addEventListener("input", () => {
       input.classList.remove("error");
@@ -217,7 +213,6 @@ if (contactForm) {
     });
   });
 }
-
 // ==========================================================
 // 6. SERVICE ACCORDION / TABS (Services page only)
 // ==========================================================

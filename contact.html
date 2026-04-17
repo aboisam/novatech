@@ -134,6 +134,8 @@
                   name="subject"
                   placeholder="Subject"
                   required />
+                <span class="form-error" id="subject-error"></span>
+                <!-- ADD THIS -->
               </div>
 
               <!-- Message -->
@@ -144,6 +146,8 @@
                   name="message"
                   placeholder="Your message..."
                   required></textarea>
+                <span class="form-error" id="message-error"></span>
+                <!-- ADD THIS -->
               </div>
 
               <button type="submit" class="btn btn-primary">
@@ -327,6 +331,16 @@
         </div>
       </div>
     </footer>
+    <!-- Back to Top Button -->
+    <button id="back-to-top" aria-label="Back to top">
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2.5">
+        <polyline points="18 15 12 9 6 15" />
+      </svg>
+    </button>
 
     <!-- JavaScript -->
     <script src="assets/js/main.js"></script>
