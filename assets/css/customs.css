@@ -363,6 +363,13 @@
   font-weight: var(--fw-bold);
 }
 
+.accordion-body {
+  display: none;
+}
+.accordion-item.active .accordion-body {
+  display: block;
+}
+
 .stat-num {
   font-family: var(--font-heading);
   font-size: var(--fs-h2);
@@ -540,6 +547,16 @@
   padding: var(--space-xl) 0;
   background-color: var(--color-background);
 }
+
+.portfolio-card {
+  transition:
+    opacity 0.25s,
+    transform 0.25s;
+}
+.portfolio-card.hidden {
+  display: none;
+}
+
 .filter-tabs {
   display: flex;
   align-items: center;

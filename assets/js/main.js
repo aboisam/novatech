@@ -217,64 +217,191 @@ if (contactForm) {
 // 6. SERVICE ACCORDION / TABS (Services page only)
 // ==========================================================
 
-// TODO: Implement ONE of the following on services.html:
-//
-// OPTION A — Accordion:
-// - Each service has a clickable header
-// - Clicking expands/collapses the detail content
-// - Only one service open at a time (or allow multiple)
-//
-// OPTION B — Tabs:
-// - Tab buttons at the top for each service
-// - Clicking a tab shows that service's detailed content
-// - Hide all other services
-//
-// OPTION C — Modal:
-// - Each service card has a "Learn More" button
-// - Clicking opens a modal/overlay with full service details
-// - Include a close button
+const accordion = document.querySelector(".accordion");
+
+accordion.addEventListener("click", (e) => {
+  const trigger = e.target.closest(".accordion-trigger");
+  if (!trigger) return;
+
+  const item = trigger.closest(".accordion-item");
+  const isActive = item.classList.contains("active");
+
+  // Collapse all
+  accordion.querySelectorAll(".accordion-item").forEach((i) => {
+    i.classList.remove("active");
+    i.querySelector(".accordion-trigger").setAttribute(
+      "aria-expanded",
+      "false",
+    );
+    i.querySelector(".accordion-icon").textContent = "+";
+  });
+
+  // Expand clicked (unless it was already open)
+  if (!isActive) {
+    item.classList.add("active");
+    trigger.setAttribute("aria-expanded", "true");
+    trigger.querySelector(".accordion-icon").textContent = "−";
+  }
+});
 
 // ==========================================================
 // 7. PORTFOLIO FILTER (Portfolio page only — OPTIONAL)
 // ==========================================================
 
-// TODO (OPTIONAL): Filter portfolio items by category
-// - Add data-category attributes to each portfolio card
-// - Add click events to filter buttons
-// - Show/hide cards based on selected category
-// - "All" button shows everything
+const filterBtns = document.querySelectorAll(".filter-btn");
+const portfolioItems = document.querySelectorAll(
+  "#portfolio-items .portfolio-card",
+);
+
+filterBtns.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    // Update active button
+    filterBtns.forEach((b) => b.classList.remove("active"));
+    btn.classList.add("active");
+
+    const filter = btn.dataset.filter;
+
+    portfolioItems.forEach((card) => {
+      const match = filter === "all" || card.dataset.category === filter;
+      card.classList.toggle("hidden", !match);
+    });
+  });
+});
 
 // ==========================================================
 // 8. UTILITY FUNCTIONS
 // ==========================================================
 
-// TODO: Add any helper functions you need
-// Examples:
-// - function showError(inputId, message) { ... }
-// - function clearErrors() { ... }
-// - function scrollToTop() { ... }
+// ── Form validation helpers ──────────────────────────────
+
+function showError(inputId, message) {
+  const input = document.getElementById(inputId);
+  const error = document.getElementById(inputId + "-error");
+  if (input) input.classList.add("input-error");
+  if (error) error.textContent = message;
+}
+
+function clearError(inputId) {
+  const input = document.getElementById(inputId);
+  const error = document.getElementById(inputId + "-error");
+  if (input) input.classList.remove("input-error");
+  if (error) error.textContent = "";
+}
+
+function clearErrors() {
+  ["first-name", "last-name", "email", "phone", "subject", "message"].forEach(
+    clearError,
+  );
+}
+
+function isValidEmail(value) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+}
+
+function isValidPhone(value) {
+  // Optional field — allow empty, but validate format if filled
+  return value === "" || /^[+\d\s\-()]{7,15}$/.test(value);
+}
+
+// ── Form submit handler ──────────────────────────────────
+
+function validateContactForm(e) {
+  e.preventDefault();
+  clearErrors();
+
+  const firstName = document.getElementById("first-name").value.trim();
+  const lastName = document.getElementById("last-name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const phone = document.getElementById("phone").value.trim();
+  const subject = document.getElementById("subject").value.trim();
+  const message = document.getElementById("message").value.trim();
+
+  let hasError = false;
+
+  if (!firstName) {
+    showError("first-name", "First name is required.");
+    hasError = true;
+  }
+  if (!lastName) {
+    showError("last-name", "Last name is required.");
+    hasError = true;
+  }
+  if (!email) {
+    showError("email", "Email address is required.");
+    hasError = true;
+  } else if (!isValidEmail(email)) {
+    showError("email", "Please enter a valid email address.");
+    hasError = true;
+  }
+  if (!isValidPhone(phone)) {
+    showError("phone", "Please enter a valid phone number.");
+    hasError = true;
+  }
+  if (!subject) {
+    showError("subject", "Subject is required.");
+    hasError = true;
+  }
+  if (!message) {
+    showError("message", "Message cannot be empty.");
+    hasError = true;
+  }
+
+  if (!hasError) {
+    showSuccess();
+  }
+}
+
+function showSuccess() {
+  const form = document.getElementById("contact-form");
+  form.reset();
+  clearErrors();
+  form.innerHTML = `
+    <div class="form-success">
+      <p>✓ Your message has been sent. We'll be in touch soon!</p>
+    </div>`;
+}
+
+// ── Scroll helper ────────────────────────────────────────
+
+function scrollToTop() {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+// ── Init ─────────────────────────────────────────────────
+
+document
+  .getElementById("contact-form")
+  .addEventListener("submit", validateContactForm);
+
+const backToTop = document.getElementById("back-to-top");
+if (backToTop) backToTop.addEventListener("click", scrollToTop);
 
 // ==========================================================
 // INITIALIZATION — Run when DOM is ready
 // ==========================================================
 
 document.addEventListener("DOMContentLoaded", function () {
-  // TODO: Call your initialization functions here
-  // Example:
-  // initMobileNav();
-  // initScrollEffects();
-  // initContactForm();
-  // initServiceAccordion();
+  initMobileNav();
+  initScrollEffects();
+  initBackToTop();
+
+  // Page-specific inits — each checks if the element exists first
+  if (document.getElementById("contact-form")) initContactForm();
+  if (document.getElementById("portfolio-items")) initPortfolioFilter();
+  if (document.querySelector(".accordion")) initAccordion();
 
   console.log("NovaTech Solutions — Website Loaded ✅");
 });
 
-//STATS COUNT-UP ANIMATION
-const statNumbers = document.querySelectorAll(".stat-number");
+// ── STATS COUNT-UP ANIMATION ──
+const statNumbers = document.querySelectorAll(".stat-num");
+
+// extract the number from "120+" or "97%"
 function getNumber(str) {
   return parseInt(str.replace(/\D/g, ""));
 }
 
+// extract the suffix "+" or "%" or ""
 function getSuffix(str) {
   return str.replace(/[0-9]/g, "").trim();
 }
@@ -282,22 +409,40 @@ function getSuffix(str) {
 function animateCount(el) {
   const target = getNumber(el.textContent);
   const suffix = getSuffix(el.textContent);
-  const duration = 1500;
-  const stepTime = 20;
+  const duration = 1500; // total animation time in ms
+  const stepTime = 20; // update every 20ms
   const steps = duration / stepTime;
   const increment = target / steps;
   let current = 0;
 
   const timer = setInterval(() => {
     current += increment;
+
     if (current >= target) {
-      el.textContent = target + suffix;
+      el.textContent = target + suffix; // snap to exact final value
       clearInterval(timer);
     } else {
       el.textContent = Math.floor(current) + suffix;
     }
   }, stepTime);
 }
+
+// ── trigger when section scrolls into view ──
+const statsSection = document.querySelector("#why-choose-us");
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        statNumbers.forEach(animateCount);
+        observer.disconnect(); // run once only, not every scroll
+      }
+    });
+  },
+  { threshold: 0.3 },
+); // trigger when 30% of section is visible
+
+if (statsSection) observer.observe(statsSection);
 
 const observer = new IntersectionObserver(
   (entries) => {
