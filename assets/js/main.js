@@ -361,13 +361,13 @@ function showSuccess() {
     </div>`;
 }
 
-
+// ── Scroll helper ────────────────────────────────────────
 
 function scrollToTop() {
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
-
+// ── Init ─────────────────────────────────────────────────
 
 document
   .getElementById("contact-form")
@@ -394,30 +394,67 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // ── STATS COUNT-UP ANIMATION ──
-document.addEventListener("DOMContentLoaded", () => {
-  const odoms = document.querySelectorAll(".odometer");
+const statNumbers = document.querySelectorAll(".stat-num");
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const el = entry.target;
-          const target = parseInt(el.dataset.target, 10);
-          el.innerHTML = 0;
-          const od = new Odometer({
-            el,
-            value: 0,
-            duration: 2000,
-            format: "d",
-            theme: "minimal",
-          });
-          setTimeout(() => od.update(target), 100);
-          observer.unobserve(el);
-        }
-      });
-    },
-    { threshold: 0.3 },
-  );
+// extract the number from "120+" or "97%"
+function getNumber(str) {
+  return parseInt(str.replace(/\D/g, ""));
+}
 
-  odoms.forEach((el) => observer.observe(el));
-});
+// extract the suffix "+" or "%" or ""
+function getSuffix(str) {
+  return str.replace(/[0-9]/g, "").trim();
+}
+
+function animateCount(el) {
+  const target = getNumber(el.textContent);
+  const suffix = getSuffix(el.textContent);
+  const duration = 1500; // total animation time in ms
+  const stepTime = 20; // update every 20ms
+  const steps = duration / stepTime;
+  const increment = target / steps;
+  let current = 0;
+
+  const timer = setInterval(() => {
+    current += increment;
+
+    if (current >= target) {
+      el.textContent = target + suffix; // snap to exact final value
+      clearInterval(timer);
+    } else {
+      el.textContent = Math.floor(current) + suffix;
+    }
+  }, stepTime);
+}
+
+// ── trigger when section scrolls into view ──
+const statsSection = document.querySelector("#why-choose-us");
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        statNumbers.forEach(animateCount);
+        observer.disconnect(); // run once only, not every scroll
+      }
+    });
+  },
+  { threshold: 0.3 },
+); // trigger when 30% of section is visible
+
+if (statsSection) observer.observe(statsSection);
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        statNumbers.forEach((el) => animateCount(el));
+        observer.disconnect();
+      }
+    });
+  },
+  { threshold: 0.3 },
+);
+
+const statsSection = document.querySelector("#why-choose-us");
+if (statsSection) observer.observe(statsSection);
