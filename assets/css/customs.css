@@ -31,7 +31,7 @@
   }
 }
 h1 {
-  background: linear-gradient(270deg, #7f77dd, #ffffff, #d85a30);
+  background: linear-gradient(270deg, #7f77dd, #ffffff, #1b9fdb);
   background-size: 300% 300%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -407,18 +407,20 @@ h1 {
   display: block;
 }
 
-.stat-num {
-  font-family: var(--font-heading);
-  font-size: var(--fs-h2);
-  font-weight: var(--fw-bold);
-  color: var(--color-accent);
-  margin-bottom: var(--space-xs);
-  line-height: 1;
-}
 .stat-label {
   font-size: var(--fs-small);
   color: var(--color-text-light);
   font-weight: var(--fw-medium);
+}
+
+.odometer,
+.odometer.odometer-auto-theme,
+.odometer.odometer-theme-minimal {
+  font-family: var(--font-heading);
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-bold);
+  color: var(--color-accent);
+  line-height: 1;
 }
 
 .team-card {

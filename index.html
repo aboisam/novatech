@@ -16,7 +16,12 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/images/icons/favicon.png" />
 
+ 
+
     <!-- Stylesheet -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/odometer@0.4.8/themes/odometer-theme-minimal.css" />
     <link rel="stylesheet" href="assets/css/customs.css" />
     <link rel="stylesheet" href="assets/css/styles.css" />
 
@@ -130,22 +135,34 @@
       <div class="container">
         <div class="stats-grid">
           <div class="stat">
-            <div class="stat-num">120+</div>
+            <div class="stat-num">
+              <span class="odometer" data-target="120"></span>
+              <span class="stat-suffix">+</span>
+            </div>
             <div class="stat-label">Projects Delivered</div>
           </div>
 
           <div class="stat">
-            <div class="stat-num">97%</div>
+            <div class="stat-num">
+              <span class="odometer" data-target="97"></span>
+              <span class="stat-suffix">%</span>
+            </div>
             <div class="stat-label">Client Satisfaction</div>
           </div>
 
           <div class="stat">
-            <div class="stat-num">35+</div>
+            <div class="stat-num">
+              <span class="odometer" data-target="35"></span>
+              <span class="stat-suffix">+</span>
+            </div>
             <div class="stat-label">Team Members</div>
           </div>
 
           <div class="stat">
-            <div class="stat-num">5+</div>
+            <div class="stat-num">
+              <span class="odometer" data-target="5"></span>
+              <span class="stat-suffix">+</span>
+            </div>
             <div class="stat-label">Years of Excellence</div>
           </div>
         </div>
@@ -213,9 +230,7 @@
             </ul>
           </div>
         </div>
-        <!-- end footer-grid -->
       </div>
-      <!-- end container -->
 
       <!-- Footer Bottom Bar -->
       <div class="footer-bottom">
@@ -284,6 +299,8 @@
         <polyline points="18 15 12 9 6 15" />
       </svg>
     </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/odometer@0.4.8/odometer.min.js"></script>
     <script src="assets/js/main.js"></script>
   </body>
 </html>
