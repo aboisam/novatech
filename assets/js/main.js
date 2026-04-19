@@ -27,11 +27,7 @@
 
 /**
  * ==========================================================
- *    NOVATECH SOLUTIONS — Main JavaScript (FIXED)
- *    Bug fixes:
- *    1. Accordion & contact-form listeners crash pages that lack those elements
- *    2. Stats count-up: duplicate const declarations + wrong data source
- *    3. Card-icon SVG fill vs stroke mismatch (see CSS note at bottom)
+ *  
  * ==========================================================
  * @format
  */
