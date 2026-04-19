@@ -24,10 +24,9 @@
 //  * ============================================================
 //  */
 
-
 /**
  * ==========================================================
- *  
+ *
  * ==========================================================
  * @format
  */
@@ -248,6 +247,8 @@ if (accordion) {
 // 6. PORTFOLIO FILTER (Portfolio page only)
 // ==========================================================
 
+document.querySelectorAll(".odometer");
+document.querySelectorAll("[data-target]");
 const filterBtns = document.querySelectorAll(".filter-btn");
 const portfolioItems = document.querySelectorAll(
   "#portfolio-items .portfolio-card",
@@ -314,5 +315,3 @@ if (statsSection) {
 
   statsObserver.observe(statsSection);
 }
-
-console.log("NovaTech Solutions — Website Loaded ✅");
