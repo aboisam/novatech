@@ -476,6 +476,9 @@ a:hover {
   }
 }
 
+.card:hover .card-icon svg {
+  fill: var(--color-accent-hover);
+}
 /* ==========================================================
    STUDENTS: ADD YOUR CUSTOM STYLES BELOW THIS LINE
    ========================================================== */
