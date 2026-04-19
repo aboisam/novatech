@@ -1,61 +1,59 @@
 # NovaTech Solutions — Company Website
 
-![NovaTech Solutions Banner](https://placehold.co/1200x400/0A1F3F/FFFFFF?text=NovaTech+Solutions+%E2%80%94+Company+Website)
+![NovaTech Solutions Banner](https://placehold.co/1200x400/0A1F3F/2D7FF9?text=NovaTech+Solutions+%E2%80%94+Empowering+Africa%27s+Digital+Future)
 
-> 🚀 A responsive, multi-page company website built with HTML, CSS, and JavaScript for a fictional IT services company based in Abuja, Nigeria.
+> A responsive, multi-page company website for **NovaTech Solutions** — a fictional IT services company based in Abuja, Nigeria. Built entirely with vanilla HTML5, CSS3, and JavaScript as my quarter assessment project for the 3LOGY Software Development Bootcamp 2026.
 
 [![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)]()
 [![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)]()
 [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)]()
+[![Responsive](https://img.shields.io/badge/Responsive-Mobile--First-00C853)]()
 [![Status](https://img.shields.io/badge/Status-Completed-00C853)]()
 
 ---
 
 ## 📌 About This Project
 
-This is my quarter assessment project for the **3LOGY Software Development Bootcamp (2026)**. The objective was to build a professional, responsive, multi-page website for **NovaTech Solutions** — a fictional IT services and software solutions company — using only vanilla HTML, CSS, and JavaScript. No frameworks or libraries were used.
+NovaTech Solutions is my quarter assessment submission for the **3LOGY Software Development Bootcamp (Cohort 2026 Q1)**. I designed and built a complete five-page company website for a fictional African tech company, using no frameworks, no CSS libraries, and no UI kits — everything from the design system to the interactive components was written by hand.
 
-**[🔗 View Live Site →]** [Replace with your GitHub Pages or Netlify URL, or write "Open `index.html` in a browser"]
+The brief required a professional, responsive site covering the company's identity, services, portfolio, and contact. Beyond the requirements, I added scroll-triggered animations, a count-up stats section, portfolio filtering, and a fully accessible mobile navigation.
+
+**Live Site:** *(Add your GitHub Pages or Netlify URL here)*
 
 ---
 
 ## 📸 Screenshots
 
-> **Instructions:** Replace the mockup images below with actual screenshots of **your completed pages**. Take screenshots at desktop width (~1200px). Save them in `docs/screenshots/` and update the paths below.
-
 ### Homepage
-![Homepage Design Mockup](docs/design/mockups/homepage-mockup.png)
-<!-- ✏️ REPLACE with your screenshot: ![Homepage](docs/screenshots/homepage.png) -->
+![Homepage](docs/screenshots/homepage.png)
 
 ### About Page
-![About Design Mockup](docs/design/mockups/about-mockup.png)
-<!-- ✏️ REPLACE with your screenshot: ![About](docs/screenshots/about.png) -->
+![About](docs/screenshots/about.png)
 
 ### Services Page
-![Services Design Mockup](docs/design/mockups/services-mockup.png)
-<!-- ✏️ REPLACE with your screenshot: ![Services](docs/screenshots/services.png) -->
+![Services](docs/screenshots/services.png)
 
 ### Portfolio Page
-![Portfolio Design Mockup](docs/design/mockups/portfolio-mockup.png)
-<!-- ✏️ REPLACE with your screenshot: ![Portfolio](docs/screenshots/portfolio.png) -->
+![Portfolio](docs/screenshots/portfolio.png)
 
 ### Contact Page
-![Contact Design Mockup](docs/design/mockups/contact-mockup.png)
-<!-- ✏️ REPLACE with your screenshot: ![Contact](docs/screenshots/contact.png) -->
+![Contact](docs/screenshots/contact.png)
 
 ---
 
-## 🛠️ Technologies Used
+## 🛠️ What I Built With
 
-| Technology | Version | Purpose |
-| ---------- | ------- | ------- |
-| **HTML5** | 5 | Page structure and semantic markup |
-| **CSS3** | 3 | Styling, layout (Flexbox & Grid), animations, responsive design |
-| **JavaScript** | ES6 | DOM manipulation, form validation, interactive components |
-| **Google Fonts** | — | Typography: Space Grotesk (headings) + Inter (body) |
-| **[Any other tool]** | — | [Purpose — e.g., "TinyPNG for image compression"] |
+| Technology | How I Used It |
+|---|---|
+| **HTML5** | Semantic structure across all five pages — proper use of `<header>`, `<nav>`, `<section>`, `<article>`, `<footer>` |
+| **CSS3 — Flexbox** | Navigation bar, hero buttons, footer bottom bar, social icons, info card layouts |
+| **CSS3 — Grid** | Services grid (3-col), stats grid (4-col), footer grid (4-col), portfolio cards, team grid — all responsive |
+| **CSS Custom Properties** | Full design system — colors, spacing, typography, shadows, and transitions as variables |
+| **CSS Keyframe Animations** | Animated hero headline gradient, hero label bounce, accordion expand/collapse transitions |
+| **JavaScript ES6+** | DOM manipulation, event delegation, regex validation, IntersectionObserver, setInterval count-up |
+| **Google Fonts** | Space Grotesk for headings · Inter for body text |
 
-> **No frameworks or libraries were used.** This project is built entirely with vanilla HTML, CSS, and JavaScript as required by the assessment brief.
+No frameworks. No libraries. No shortcuts.
 
 ---
 
@@ -64,288 +62,222 @@ This is my quarter assessment project for the **3LOGY Software Development Bootc
 ```
 NovaTech-Company-Website/
 │
-├── index.html                  ← Homepage
-├── about.html                  ← About Us page
-├── services.html               ← Services page
-├── portfolio.html              ← Portfolio page
-├── contact.html                ← Contact page
+├── index.html                ← Homepage
+├── about.html                ← About Us
+├── services.html             ← Services + Accordion
+├── portfolio.html            ← Portfolio + Filter
+├── contact.html              ← Contact Form
 │
 ├── assets/
 │   ├── css/
-│   │   └── styles.css          ← Main stylesheet (design system + custom styles)
+│   │   ├── styles.css        ← All component styles and responsive breakpoints
+│   │   └── customs.css       ← Design system — CSS variables, resets, utilities
 │   ├── js/
-│   │   └── main.js             ← All JavaScript functionality
-│   ├── fonts/                  ← Custom fonts (if any)
+│   │   └── main.js           ← All JavaScript — guarded, modular, no framework
 │   └── images/
-│       ├── logo.png            ← Primary logo
-│       ├── logo-white.png      ← White logo for dark backgrounds
-│       ├── hero/               ← Hero/banner background images
-│       ├── team/               ← Team member photos
-│       ├── services/           ← Service illustration images
-│       ├── portfolio/          ← Project screenshots
-│       ├── clients/            ← Client/testimonial photos
-│       ├── about/              ← About page content images
-│       └── icons/              ← Favicon & icon assets
+│       ├── hero/             ← Hero background image
+│       ├── team/             ← Team member photos
+│       ├── services/         ← Service illustrations
+│       ├── portfolio/        ← Project screenshots
+│       ├── clients/          ← Testimonial photos
+│       ├── about/            ← About page images
+│       └── icons/            ← Favicon
 │
 ├── docs/
-│   ├── design/                 ← Design references & branding
-│   │   ├── DESIGN-SYSTEM.md
-│   │   ├── PROJECT-BRIEF.md
-│   │   ├── LOGO-DESIGN-BRIEF.md
-│   │   └── mockups/            ← UI design mockup images
-│   ├── requirements/           ← Assessment specs & guides
-│   │   ├── ASSESSMENT-INSTRUCTIONS.md
-│   │   ├── PAGE-CONTENT-GUIDE.md
-│   │   ├── JS-REQUIREMENTS.md
-│   │   ├── IMAGE-REQUIREMENTS.md
-│   │   └── FOLDER-STRUCTURE.md
-│   └── screenshots/            ← README screenshots
+│   ├── design/               ← Design references and mockups
+│   ├── requirements/         ← Assessment brief and specs
+│   └── screenshots/          ← README screenshots
 │
-├── README.md                   ← This file
-└── .gitignore                  ← Git ignore rules
+├── README.md
+└── .gitignore
 ```
 
 ---
 
-## 🚀 How to Run Locally
+## 🚀 How to Run It
 
-### Option 1: Direct File Open
+### Open directly in a browser
 ```bash
-# 1. Clone the repository
-git clone https://github.com/[your-username]/NovaTech-Company-Website.git
+# Clone the repo
+git clone https://github.com/aboisam/NovaTech-Company-Website.git
 
-# 2. Navigate to the project folder
 cd NovaTech-Company-Website
 
-# 3. Open in browser
-# Simply double-click index.html or:
-start index.html          # Windows
-open index.html           # macOS
-xdg-open index.html       # Linux
+# Open in your browser
+open index.html          # macOS
+start index.html         # Windows
+xdg-open index.html      # Linux
 ```
 
-### Option 2: VS Code Live Server
-1. Open the project folder in **VS Code**
-2. Install the **Live Server** extension (by Ritwick Dey)
-3. Right-click `index.html` → **"Open with Live Server"**
-4. The website opens at `http://127.0.0.1:5500`
-
-> 💡 **Recommended:** Use Live Server for automatic reloading when you make changes.
+### Or use VS Code Live Server *(recommended)*
+1. Open the project folder in VS Code
+2. Install the **Live Server** extension by Ritwick Dey
+3. Right-click `index.html` → **Open with Live Server**
+4. Opens at `http://127.0.0.1:5500`
 
 ---
 
-## 📄 Pages & Features
+## 📄 Pages
 
-### Page Completion Status
+### Homepage — `index.html`
+The landing page opens with an animated hero section. The `<h1>` headline cycles through a three-colour gradient (purple → white → blue) using a CSS keyframe animation, and the welcome label has a continuous vertical bounce. Below the hero are three service overview cards, a stats section that counts up when scrolled into view (120+ projects, 97% client satisfaction, 35+ team members, 5+ years), and a call-to-action banner.
 
-> **Instructions:** Check off each feature as you complete it. Change `[ ]` to `[x]`.
+### About — `about.html`
+Covers NovaTech's company story in a two-column image-and-text layout, a Mission and Vision card pair, and a five-column team grid with photos, roles, and short bios.
 
-#### Homepage (`index.html`)
-- [ ] Hero section with company name, tagline, and CTA buttons
-- [ ] Background image or gradient on hero
-- [ ] Services overview section (3 service cards in responsive grid)
-- [ ] Why Choose Us / Stats section (4 stats)
-- [ ] Call-to-Action section
-- [ ] Consistent navigation and footer
+### Services — `services.html`
+Lists all five core services with icons and descriptions. Each service has an expandable **accordion panel** — clicking a trigger expands the detail content and collapses any previously open item. The accordion uses `max-height` CSS transitions for a smooth animation and updates `aria-expanded` for screen readers.
 
-#### About Page (`about.html`)
-- [ ] Page hero/banner with breadcrumb
-- [ ] Company story section (2+ paragraphs)
-- [ ] Mission & Vision (side-by-side cards)
-- [ ] Meet the Team (4+ team member cards with photos)
-- [ ] Consistent navigation and footer
+### Portfolio — `portfolio.html`
+Displays project cards with cover images, category badges, tech tags, and descriptions. A **filter bar** at the top lets users show projects by category. Clicking a filter button hides non-matching cards using a `.hidden` class toggle. Cards also have a subtle image zoom on hover.
 
-#### Services Page (`services.html`)
-- [ ] Page hero/banner with breadcrumb
-- [ ] All 5 services displayed with icons, headings, and descriptions
-- [ ] Interactive service detail (accordion / tabs / modal) — *circle which you chose*
-- [ ] CTA section
-- [ ] Consistent navigation and footer
-
-#### Portfolio Page (`portfolio.html`)
-- [ ] Page hero/banner with breadcrumb
-- [ ] 4+ project showcase cards with images and descriptions
-- [ ] Project detail view (modal, link, or detail section)
-- [ ] CTA section
-- [ ] Consistent navigation and footer
-
-#### Contact Page (`contact.html`)
-- [ ] Page hero/banner with breadcrumb
-- [ ] Contact form with 5 fields (name, email, phone, subject, message)
-- [ ] JavaScript form validation with error messages
-- [ ] Company contact information displayed
-- [ ] Consistent navigation and footer
-
-#### Cross-Cutting
-- [ ] Responsive navigation bar on all pages (with active link indicator)
-- [ ] Mobile hamburger menu (functional with JavaScript)
-- [ ] Footer with company info, quick links, and social icons on all pages
-- [ ] Fully responsive design (desktop, tablet, mobile)
-- [ ] Design system CSS variables used consistently (no hardcoded colors/fonts)
+### Contact — `contact.html`
+A contact form with six fields: First Name, Last Name, Email, Phone (optional), Subject, and Message. All required fields are validated on submit with **inline error messages**. Errors clear in real time as the user types. On a valid submission, the form is replaced with a success confirmation message. A sticky info card alongside the form shows phone, email, and address details.
 
 ---
 
-## ⚡ JavaScript Features Implemented
+## ⚡ JavaScript — How Each Feature Works
 
-> **Instructions:** Check which features you implemented. For each one, briefly describe how it works.
+Every feature in `main.js` is wrapped in an element existence check (`if (element)`) so a missing element on one page never causes a crash that kills features on another page.
 
-### Required Features
+### Mobile Navigation Toggle
+The hamburger button toggles an `.open` class on both itself and `#nav-menu`. The menu slides down via a CSS `max-height` transition from `0` to `80vh`. The menu closes when the user clicks outside it, presses `Escape`, or clicks any nav link. The button's `aria-expanded` attribute stays in sync throughout.
 
-- [ ] **Mobile Navigation Toggle**
-  - Function: `initMobileNav()`
-  - Description: [Briefly describe — e.g., "Clicking the hamburger button toggles the mobile nav menu. Menu closes when a link is clicked."]
+### Active Nav Link Highlight
+On every page load, the script compares `window.location.pathname` against each nav link's `href`. The matching link receives the `.active` class. Any `.active` set in the HTML markup is stripped first to prevent conflicts.
 
-- [ ] **Contact Form Validation**
-  - Functions: `initContactForm()`, `showError()`, `clearErrors()`
-  - Description: [Briefly describe — e.g., "Validates name, email, subject, and message fields on form submit. Shows inline error messages. Displays success message when all fields are valid."]
+### Navbar Scroll Shadow
+A `scroll` event listener watches `window.scrollY`. After 50px of scroll, a `.scrolled` class is added to `#main-header`, triggering a CSS `box-shadow` transition that makes the navbar feel elevated above the content.
 
-- [ ] **Service Interaction** — [Accordion / Tabs / Modal] *(circle one)*
-  - Function: `initServiceAccordion()` / `initServiceTabs()` / `initServiceModal()`
-  - Description: [Briefly describe — e.g., "Accordion component that expands to show full service details. Only one item open at a time."]
+### Back to Top Button
+The `#back-to-top` button is invisible by default. After 300px of scroll it fades in and translates up into position via the `.visible` class. Clicking it calls `window.scrollTo({ top: 0, behavior: 'smooth' })`.
 
-### Bonus Features (if implemented)
+### Stats Count-Up Animation
+An `IntersectionObserver` watches the `#why-choose-us` section with a 30% visibility threshold. When the section enters the viewport, each `.odometer` span's `data-target` attribute is read and a `setInterval` loop increments the displayed number every 20ms over 1,500ms. The observer disconnects immediately after firing so the animation runs exactly once.
 
-- [ ] **Scroll-to-Top Button** — `initScrollToTop()`
-  - [Brief description of what it does]
+### Service Accordion
+Click events on `.accordion` are handled with event delegation — a single listener on the parent catches all trigger clicks. When a trigger fires, all items collapse first, then the clicked item expands (unless it was already open). The `aria-expanded` attribute and icon character (`+` / `−`) update on every state change.
 
-- [ ] **Navbar Scroll Effect** — `initNavScroll()`
-  - [Brief description of what it does]
+### Portfolio Filter
+Each filter button has a `data-filter` value. Clicking a button removes `.active` from all buttons, adds it to the clicked one, then loops through every `.portfolio-card` and toggles `.hidden` based on whether the card's `data-category` matches the active filter. The `all` filter unhides every card.
 
-- [ ] **Portfolio Filtering** — `initPortfolioFilter()`
-  - [Brief description of what it does]
-
-- [ ] **Dark Mode Toggle** — `initDarkMode()`
-  - [Brief description of what it does]
-
-- [ ] **Smooth Scroll** — `initSmoothScroll()`
-  - [Brief description of what it does]
-
-- [ ] **Typing Animation** — `initTypingEffect()`
-  - [Brief description of what it does]
-
-- [ ] **Other: [Feature Name]**
-  - [Description]
+### Contact Form Validation
+On submit, the handler validates every required field and checks the email against a regex pattern. Any failed check calls `showError()` which adds an `.error` border to the input and writes a message into its paired error `<span>`. A separate `input` event listener on every field calls `clearError()` so errors disappear as the user starts correcting them. A fully valid submission calls `showSuccess()` which replaces the form with a confirmation message.
 
 ---
 
-## 🐛 Known Issues / Bugs
+## 🎨 Design System
 
-> **Instructions:** Be honest about any bugs or issues you're aware of. This shows maturity and self-awareness — real developers always track known issues.
+All visual tokens live in `customs.css` as CSS custom properties. No colour, spacing, or font value is hardcoded inside a component.
 
-| # | Issue | Page | Severity | Description |
-| - | ----- | ---- | -------- | ----------- |
-| 1 | [e.g., "Hero image loads slowly on mobile"] | [e.g., index.html] | [Low/Medium/High] | [Brief description of the issue and any workaround] |
-| 2 | [Issue title] | [Page] | [Severity] | [Description] |
-| 3 | [Issue title] | [Page] | [Severity] | [Description] |
+```css
+/* Brand Colors */
+--color-primary: #0A1F3F;       /* deep navy — nav, footer, headings */
+--color-accent: #2D7FF9;        /* brand blue — CTAs, icons, highlights */
+--color-accent-hover: #1a6de0;  /* darker blue for hover states */
+--color-accent-light: #e8f0fe;  /* tinted blue for icon backgrounds, tags */
+--color-white: #ffffff;
+--color-text: #1a202c;
+--color-text-light: #64748b;
+--color-background: #f8fafc;
+--color-error: #ef4444;
+--color-warning: #f59e0b;
 
-> If you have **no known issues**, write: "No known bugs at the time of submission. Tested on Chrome, Firefox, and Safari."
+/* Typography */
+--font-heading: 'Space Grotesk', sans-serif;
+--font-body: 'Inter', sans-serif;
 
----
+/* Type Scale */
+--fs-h1 / --fs-h2 / --fs-h3 / --fs-h4 / --fs-body / --fs-small / --fs-caption
 
-## 🔮 Future Improvements
+/* Font Weights */
+--fw-regular: 400  |  --fw-medium: 500  |  --fw-semibold: 600  |  --fw-bold: 700
 
-> **Instructions:** If you had more time, what would you add or change? List at least 3 improvements.
+/* Spacing — 8-step scale */
+--space-xs  →  --space-4xl
 
-1. **[Improvement 1]** — [e.g., "Add page transition animations between pages using CSS keyframes"]
-2. **[Improvement 2]** — [e.g., "Implement a working contact form backend using Formspree or EmailJS"]
-3. **[Improvement 3]** — [e.g., "Add a blog page with article cards and a reading view"]
-4. **[Improvement 4]** — [e.g., "Implement lazy loading for portfolio images to improve performance"]
-5. **[Improvement 5]** — [e.g., "Add ARIA landmarks and improve keyboard navigation for accessibility"]
+/* Elevation */
+--shadow-sm / --shadow-md / --shadow-lg / --shadow-accent
 
----
+/* Shape */
+--radius-sm / --radius-md / --radius-lg / --radius-full
 
-## 🎨 Design Decisions
-
-> **Instructions:** Briefly explain any design choices you made that differ from or extend the provided design system.
-
-- **[Decision 1]:** [e.g., "I chose the accordion interaction for the services page because it keeps all content on one page and reduces scrolling."]
-- **[Decision 2]:** [e.g., "I added a subtle hover animation on team cards to make the page feel more interactive."]
-- **[Decision 3]:** [e.g., "I used a pure CSS gradient for the hero instead of an image to improve load time."]
-
----
-
-## 📚 Credits & Attributions
-
-### Images
-| Image | Source | License |
-| ----- | ------ | ------- |
-| [Hero background image] | [e.g., "Unsplash — Photo by [Photographer Name]"] | [e.g., "Unsplash License (free)"] |
-| [Team member photos] | [e.g., "Pexels — searched 'professional headshot'"] | [e.g., "Pexels License (free)"] |
-| [Portfolio mockups] | [e.g., "Smartmockups.com"] | [Free tier] |
-| [Service icons] | [e.g., "Heroicons (heroicons.com)"] | [MIT License] |
-| [Add more as needed] | | |
-
-### Fonts
-- **Space Grotesk** — [Google Fonts](https://fonts.google.com/specimen/Space+Grotesk) — SIL Open Font License
-- **Inter** — [Google Fonts](https://fonts.google.com/specimen/Inter) — SIL Open Font License
-
-### References & Resources
-- [MDN Web Docs](https://developer.mozilla.org/) — HTML/CSS/JS reference
-- [CSS-Tricks](https://css-tricks.com/) — Layout and styling techniques
-- [W3C Validator](https://validator.w3.org/) — HTML validation
-- 3LOGY Bootcamp course materials and lecture notes
-- [Add any other resources you used]
-
-### Design System
-The color palette, typography, spacing system, and CSS custom properties were provided by the **3LOGY Bootcamp** as part of the assessment starter files.
-
----
-
-## ✅ Pre-Submission Checklist
-
-> **Instructions:** Go through this checklist before submitting. Ensure everything passes.
-
-```
-CODE QUALITY:
-[ ] HTML passes W3C Validator with no errors
-[ ] No console errors on any page (check with F12 → Console)
-[ ] All files follow naming conventions (lowercase, hyphens)
-[ ] Code is properly indented and organized
-[ ] Meaningful class names and IDs used
-[ ] Comments added to complex code sections
-
-DESIGN:
-[ ] Design system CSS variables used throughout (no hardcoded colors)
-[ ] Consistent look across all 5 pages
-[ ] All images have alt text
-[ ] Proper heading hierarchy (one H1 per page)
-
-RESPONSIVENESS:
-[ ] Tested on Desktop (≥992px)
-[ ] Tested on Tablet (768px–991px)
-[ ] Tested on Mobile (≤767px)
-[ ] Hamburger menu works on mobile
-[ ] No horizontal scrollbar on any screen size
-
-FUNCTIONALITY:
-[ ] All navigation links work correctly
-[ ] Active page indicator is correct on each page
-[ ] Contact form validation works
-[ ] Service interaction works (accordion/tabs/modal)
-[ ] No JavaScript errors in console
-
-SUBMISSION:
-[ ] Code pushed to GitHub (public repository)
-[ ] README.md completed with screenshots
-[ ] Repository has a clear, descriptive name
-[ ] All files are committed (no missing assets)
+/* Motion */
+--transition-fast / --transition-normal
 ```
 
----
-
-## 👤 Student Information
-
-| Field | Details |
-| ----- | ------- |
-| **Full Name** | ABOI SAMSON ABOI|
-| **GitHub Username** | [@aboisam](https://github.com/aboisam) |
-| **Cohort / Group** | [e.g., "3LOGY Bootcamp — Cohort 2026 Q1"] |
-| **Assessment** | Quarter Assessment — HTML, CSS & JavaScript |
-| **Submission Date** | [16/May/2026] |
-| **Live URL** | https://novatech-nine.vercel.app/
+### Animations
+| Animation | Element | Behaviour |
+|---|---|---|
+| `gradientShift` | Hero `<h1>` | Cycles a 3-colour gradient (purple → white → blue) every 4s, infinitely |
+| `letterPop` | `.hero-label` | Continuous vertical bounce to draw attention on load |
+| `max-height` transition | Accordion panels & mobile nav | Smooth expand/collapse with cubic-bezier easing |
+| Opacity + translateY | Back-to-top button | Fades in and rises into view when scroll threshold is passed |
+| `scale(1.05)` | Portfolio card images | Subtle zoom on card hover with slow cubic-bezier easing |
+| JS setInterval count | `.odometer` spans | Numbers tick from 0 to their `data-target` value over 1.5 seconds |
 
 ---
 
-<p align="center">
-  Built with ❤️ at <strong>3LOGY Software Development Bootcamp</strong> — 2026
-</p>
+## 📐 Responsive Design
+
+I used a mobile-first approach with five breakpoints covering all standard device widths.
+
+| Breakpoint | Max Width | Key Layout Changes |
+|---|---|---|
+| Tablet Large | 1024px | Team grid → 3 columns; process steps → 2 columns |
+| Tablet | 992px | Services grid → 2 columns; footer → 2 columns; contact stacks to 1 column |
+| Mobile Large | 768px | Stats grid → 2 columns; story section stacks; hero padding reduced |
+| Mobile | 640px | Hamburger activates; nav becomes full-width slide-down panel |
+| Mobile Small | 576px | All content grids → 1 column; footer and form rows fully stack |
+
+---
+
+## 🐛 Known Issues
+
+| # | Issue | Page | Severity |
+|---|---|---|---|
+| 1 | Footer copyright reads "©21" instead of "© 2026" | All | Low |
+| 2 | Footer "Services" column contains placeholder links including a dummy "Boolsmc Policy" entry | All | Low |
+| 3 | Footer contact info has placeholder phone numbers and a non-functional email address | All | Medium |
+| 4 | Card icon SVGs use filled `<path>` elements but CSS targets `stroke` — accent colour does not apply on hover | index.html | Low |
+| 5 | Hero background image falls back to CSS gradient if `assets/images/hero/hero-bg.png` is absent | All | Medium |
+
+---
+
+## 🔮 What I Would Add Next
+
+1. **Working form backend** — Connect the contact form to [Formspree](https://formspree.io) or [EmailJS](https://emailjs.com) so submissions are actually delivered to an inbox
+2. **Page transition animations** — Fade or slide between pages using the View Transitions API
+3. **Dark mode** — Toggle between light and dark variable sets via a `data-theme` attribute on `<html>`
+4. **Image lazy loading** — Add `loading="lazy"` to all portfolio and team images for faster first-paint
+5. **Testimonials carousel** — Replace static testimonial cards with a CSS scroll-snap or JS slider
+6. **Blog / Insights page** — Article listing with cards, categories, and reading-time estimates
+
+---
+
+## 🎓 What I Learned
+
+Building this without a framework forced me to really understand how CSS Grid and Flexbox complement each other — Grid for macro layout, Flexbox for aligning items within components. Writing the accordion, the portfolio filter, and the count-up animation from scratch gave me much more confidence with event delegation, DOM class manipulation, and the IntersectionObserver API. The biggest lesson was structuring JavaScript so one broken element on one page never takes down the whole site — wrapping every feature in an existence guard was something I had to debug my way into understanding.
+
+---
+
+## 📚 Resources I Used
+
+- [MDN Web Docs](https://developer.mozilla.org/) — primary HTML, CSS, and JavaScript reference
+- [CSS-Tricks — Complete Guide to Grid](https://css-tricks.com/snippets/css/complete-guide-grid/)
+- [W3C HTML Validator](https://validator.w3.org/)
+- 3LOGY Bootcamp 2026 — course materials, design system starter tokens, and assessment brief
+- [Google Fonts](https://fonts.google.com/) — Space Grotesk and Inter typefaces
+
+---
+
+## 👤 About Me
+
+| | |
+|---|---|
+| **Name** | Aboi Samson Aboi |
+| **GitHub** | [@aboisam](https://github.com/aboisam) |
+| **Live Site** | https://novatech-nine.vercel.app/index.html |
+
+---
+
