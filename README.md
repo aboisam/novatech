@@ -342,7 +342,7 @@ SUBMISSION:
 | **Cohort / Group** | [e.g., "3LOGY Bootcamp — Cohort 2026 Q1"] |
 | **Assessment** | Quarter Assessment — HTML, CSS & JavaScript |
 | **Submission Date** | [16/May/2026] |
-| **Live URL** | 
+| **Live URL** | https://novatech-nine.vercel.app/
 
 ---
 
